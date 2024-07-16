@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Extractor</title>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #content {
+        width: 400px;
+        height: 400px;
+        background-color: bisque;
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      h1 {
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        text-align: center;
+      }
+      button {
+        font-size: 14px;
+        font-weight: 600;
+        color: white;
+        background: rgb(236, 173, 96);
+        padding: 8px 20px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+      button.se,
+      button.cls {
+        background-color: crimson;
+      }
+      .email-count-container,
+      .page-count-container {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h1>
+        Email Extractor (<span class="email-count-container"
+          >Total Extracted:<span class="emails-count"></span></span
+        ><span class="page-count-container"
+          >, Page:<span class="page-count"></span></span
+        >)
+      </h1>
+      <button class="eae">Extract All Emails</button>
+      <!-- <button class="sc">Scrap Emails</button> -->
+      <button class="ve">View Emails</button>
+      <button class="cls">Clear Storage</button>
+      <button class="se">Stop Extracting</button>
+      <!-- <button id="clearLocalStorageButton">Clear Local Storage</button> -->
+
+      <div id="emails"></div>
+    </div>
+  </body>
+</html>

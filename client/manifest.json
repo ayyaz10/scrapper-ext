@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Scrapper",
+  "description": "Another productivity tool",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://www.11880.com/suche/restaurant/*"],
+      "js": ["contentAllLinks.js"]
+    },
+    {
+      "matches": ["https://www.11880.com/suche/Restaurant/*"],
+      "js": ["contentAllLinks.js"]
+    },
+    {
+      "matches": ["https://www.11880.com/branchenbuch/*"],
+      "js": ["contentLink.js"]
+    },
+    {
+      "matches": ["https://app.clockify.me/tracker"],
+      "js": ["timer.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "alarms", "notifications", "tabs", "activeTab"],
+  "icons": {
+    "128": "focuslist-logo.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "focuslist-logo.png",
+    "default_title": "Handy List"
+  },
+  "options_page": "options.html",
+  "chrome_url_overrides": {
+    "newtab": "myPage.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["focuslist-logo.png", "list-emails.html"],
+      "matches": ["*://*/*"],
+      "use_dynamic_url": false
+    }
+  ]
+}

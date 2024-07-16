@@ -1,0 +1,19 @@
+{
+  "name": "scraper-ext-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "env": "^0.0.2",
+    "express": "^4.19.2",
+    "googleapis": "^137.1.0",
+    "nodemon": "^3.1.0"
+  }
+}
